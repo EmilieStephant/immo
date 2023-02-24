@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+{{ parent() }} | Annonces
+{% endblock %}
+
+{% block body %}
+    {% for annonce in liste %}
+        <section>
+            <article>
+                <ul>
+                    <li>
+                        <a href="{{ path('logement_details', {'id': annonce.id}) }}">{{ annonce.titre }}</a>
+                    </li>
+                </ul>
+            </article>
+        </section>
+    {% endfor %}
+{% endblock %}
+
